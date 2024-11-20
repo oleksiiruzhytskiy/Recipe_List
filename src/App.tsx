@@ -1,6 +1,6 @@
-import './App.css';
+import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
 import AllRecipes from "./pages/AllRecipes";
 import RecipeDetails from "./pages/RecipeDetails";
 import SelectedRecipesPage from "./pages/SelectedRecipesPage";
@@ -18,6 +18,7 @@ const App = () => {
           </Link>
         </nav>
         <Routes>
+          <Route path="/Recipe_List" element={<Navigate to="/" replace />} />
           <Route path="/" element={<AllRecipes />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
 
@@ -27,6 +28,5 @@ const App = () => {
     </Router>
   );
 };
-
 
 export default App;
